@@ -29,9 +29,18 @@ def one():
             tie = tie + indlist2[indlist.index(hand[k])]
         inter = [tie, hand, bid]
         for ind in indlist:
-           p = hand.count(ind)
-           if p > 1:
-               cards.append(p)
+           if ind != "J":
+                p = hand.count(ind)
+                if p > 1:
+                    cards.append(p)
+        cards.sort(reverse=True)
+        jokers=hand.count("J")
+        if cards == []:
+            cards.append(1)
+        cards[0] = cards[0]+jokers
+        if cards[0] == 6:
+            cards[0] = 5
+        
         if cards == [5]:
             fives.append(inter)
         elif cards == [4]:
@@ -44,14 +53,14 @@ def one():
             tpairs.append(inter)
         elif cards == [2]:
             pairs.append(inter)
-        else:
+        elif cards == [1]:
             high.append(inter)
     for matrix in megamatrix:
         if matrix != []:
             fullrank.extend(tiebreaker(matrix))
-    print(fullrank)
     for r in range(len(fullrank)):
         adding_value += int(fullrank[r][2])*(r+1)
+    print(len(fullrank))
     return adding_value
 
 

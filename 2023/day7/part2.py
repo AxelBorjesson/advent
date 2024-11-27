@@ -1,7 +1,7 @@
 def one():
     adding_value = 0
     fullrank = []
-    indlist = ["A","K","Q","J","T","9","8","7","6","5","4","3","2",]
+    indlist = ["A","K","Q","T","9","8","7","6","5","4","3","2","J"]
     indlist2 = ["A","B","C","D","E","F","G","H","I","J","K","L","M"]
     fives = []
     fours = []

@@ -1,7 +1,7 @@
 def one():
     inlist = []
     race = []
-    with open("input.txt","r") as text_file:
+    with open("day6/input.txt","r") as text_file:
         distime = text_file.read().splitlines()
     for time in distime:
         inlist.append(time.split())

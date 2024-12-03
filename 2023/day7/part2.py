@@ -38,14 +38,12 @@ def one():
         if cards == []:
             cards.append(1)
         cards[0] = cards[0]+jokers
-        if cards[0] == 6:
-            cards[0] = 5
         
-        if cards == [5]:
+        if cards == [5] or cards == [6]:
             fives.append(inter)
         elif cards == [4]:
             fours.append(inter)
-        elif cards == [3,2] or cards == [2,3]:
+        elif cards == [3,2]:
             fulls.append(inter)
         elif cards == [3]:
             threes.append(inter)
@@ -60,7 +58,7 @@ def one():
             fullrank.extend(tiebreaker(matrix))
     for r in range(len(fullrank)):
         adding_value += int(fullrank[r][2])*(r+1)
-    print(len(fullrank))
+    print(fullrank)
     return adding_value
 
 
